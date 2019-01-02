@@ -39,4 +39,23 @@ class Shop {
 }
 
 // Class for UI
-class UI {}
+class UI {
+  static displayCigars() {
+    const cigars = Shop.getCigar();
+
+    cigars.forEach(cigar => UI.addCigarToList(cigar));
+  }
+
+  static addCigarToList() {
+    const list = document.querySelector("#cigar-list");
+    const card = document.createElement("div");
+
+    card.innerHTML = `
+    <h5 className="card-header">${cigar.brand}</h5>
+    <div className="card-body">
+      <h5 className="card-title">${cigar.cigarName}</h5>
+      <p className="card-text">${cigar.description}</p>
+    </div>
+    `;
+  }
+}
